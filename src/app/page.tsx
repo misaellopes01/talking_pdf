@@ -1,3 +1,4 @@
+import { FileUpload } from "@/components/FileUpload";
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
@@ -24,7 +25,7 @@ export default async function Home() {
           <p className="max-w-xl mt-2 text-lg text-slate-800">Junta-te aos vários estudantes e profissionais que utilizam a nossa plataforma para conversar com seus PDFs e assim multiplicar a sua produtividade</p>
 
           <div className="w-full mt-4 flex items-center justify-center">
-            {isAuthenticated ? <h1>fileupload</h1> : <Link href={'/sign-in'}>
+            {isAuthenticated ? <FileUpload /> : <Link href={'/sign-in'}>
             <Button className="flex flex-row gap-2">Que tal começar a usar? <LogIn size={18} /></Button>
             </Link>}
           </div>
